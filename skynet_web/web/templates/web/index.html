@@ -74,28 +74,28 @@
       </thead>
       <tbody>
         <tr>
-          <td>Levenshtein distance</td>
-          <td>1.0</td>
-          <td>20.9</td>
-          <td>79.2</td>
+          <td>Direct Match</td>
+          <td id="dm-coverage"></td>
+          <td id="dm-time"></td>
+          <td id="dm-accuracy"></td>
           <td>O(nm)</td>
-          <td>500</td>
+          <td id="dm-memory"></td>
+        </tr>
+        <tr>
+          <td>Levenshtein distance</td>
+          <td id="l-coverage"></td>
+          <td id="l-time"></td>
+          <td id="l-accuracy"></td>
+          <td>O(n^2)</td>
+          <td id="l-memory"></td>
         </tr>
         <tr>
           <td>ML</td>
-          <td>0.8</td>
-          <td>34.2</td>
-          <td>83.2</td>
-          <td>O(n^2)</td>
-          <td>1035.2</td>
-        </tr>
-        <tr>
-          <td>DBpedia</td>
-          <td>0.87</td>
+          <td id='ml-coverage'></td>
+          <td id='ml-time'></td>
+          <td id='ml-accuracy'></td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td id='ml-memory'></td>
         </tr>
       </tbody>
     </table>
@@ -147,7 +147,23 @@ $(document).ready( function () {
         complete: function(xhr) {
           status.html(xhr.responseText);
           var obj = JSON.parse(xhr.responseText);
-          updateChart(obj.time, obj.coverage);
+
+          for ( o of obj ) {
+            updateChart(o);
+            if ( o.algorithm=="levenshtein" ){
+              $("#l-coverage").html(o.coverage);
+              $("#l-time").html(o.time);
+              $("#l-memory").html(o.memory);
+            }else if (o.algorithm=="directmatch"){
+              $("#dm-coverage").html(o.coverage);
+              $("#dm-time").html(o.time);
+              $("#dm-memory").html(o.memory);
+            }else if (o.algorithm=="ml"){
+              $("#ml-coverage").html(o.coverage);
+              $("#ml-time").html(o.time);
+              $("#ml-memory").html(o.memory);
+            }
+          }
         },
         dataType: 'json',
       });
@@ -189,7 +205,7 @@ $(document).ready( function () {
         y: 34.3,
       }]
     }, {
-      label: 'ML',
+      label: 'Direct Match',
       //borderColor: 'rgba(0,1,1,0.1)',
       borderColor: window.chartColors.blue,
       backgroundColor: color(window.chartColors.blue).alpha(0.2).rgbString(),
@@ -197,6 +213,14 @@ $(document).ready( function () {
       data: [{
         x: 45.2,
         y: 89.3,
+      }]
+    }, {
+      label: 'Machine Learning',
+      borderColor: window.chartColors.purple,
+      backgroundColor: color(window.chartColors.purple).alpha(0.2).rgbString(),
+      data: [{
+        x: 0,
+        y: 0,
       }]
     }]
   };
@@ -216,20 +240,46 @@ $(document).ready( function () {
             min: 0,
             max: 100
           }
-        }]
+        }],
+        xAxes: [{
+          type: 'linear',
+          ticks: {
+            min: 0,
+          }
+        }],
+
       }
     }
 
   });
 
-function updateChart(coverage, time){
+function updateChart(obj){
   scatterChartData.datasets.forEach(function(dataset) {
-    dataset.data = dataset.data.map(function() {
-      return {
-        x: coverage,
-        y: time
-      };
-    });
+    //if ( dataset.data.label == algorithm ) {
+    //  dataset.data = { x: coverage, y:
+    console.log(dataset);
+    if ( dataset.label == "Levenshtein distance" && obj.algorithm == "levenshtein" ) {
+      dataset.data = dataset.data.map(function() {
+        return {
+          x: obj.time,
+          y: obj.coverage
+        };
+      });
+    } else if ( dataset.label == "Direct Match" && obj.algorithm == "directmatch" ) {
+      dataset.data = dataset.data.map(function() {
+        return {
+          x: obj.time,
+          y: obj.coverage
+        };
+      });
+    } else if ( dataset.label == "Machine Learning" && obj.algorithm == "ml" ){
+      dataset.data = dataset.data.map(function() {
+        return {
+          x: obj.time,
+          y: obj.coverage
+        };
+      });
+    }
   });
   window.myScatter.update();
 }
