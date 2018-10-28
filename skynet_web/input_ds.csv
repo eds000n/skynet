@@ -1,0 +1,436 @@
+\documentclass[letter, 11pt]{res}
+
+\setlength{\textheight}{9.5in}
+%\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=5mm,
+ right=25mm,
+ top=10mm,
+ bottom=10mm,
+ bindingoffset=0mm
+ }
+%\usepackage{fontenc}
+\usepackage{enumitem}
+\setlist{nolistsep}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{vwcol}
+\usepackage{amssymb}
+
+\usepackage{array}
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault} 
+%\renewcommand{\baselinestretch}{0.95}
+\renewcommand{\baselinestretch}{1}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+
+  \definecolor{darkblue}{rgb}{0.207, 0.337, 0.631}
+  %\definecolor{darkblue}{rgb}{0.0, 0.37, 0.763}
+
+%\onehalfspacing
+%\setmainfont[Mapping=tex-text]{Linux Libertine O}
+
+%http://www.mit.edu/~vakilian/AliVakilian.pdf
+%https://www.eecs.tufts.edu/~halves01/HugoAkitayaCV.pdf
+%http://arturodeza.wdfiles.com/local--files/home/resume_2016.pdf
+
+\begin{document}
+\vspace{-0.5em}
+\name{\huge{Edson Ariel Ticona Zegarra}\\
+    {\centering \color{darkblue} \hspace*{9em} R\&D Engineer } }
+    %{\centering \color{darkblue} \hspace*{6em}Master in Computer Science } }
+%\address{
+  %\begin{center}
+    %{\color{darkblue} \textbf{Master in Computer Science\\} }
+  %\end{center}\\
+  %Master in Computer Science\\
+%}
+\address{
+%  \texttt{\includegraphics[width=1.5em]{email.png} ticonae@acm.org \hspace{2em}  \includegraphics[height=1.5em]{iphone.png} +39 334 1959632 \hspace{2em} \includegraphics[width=1.5em]{github.png} github.com/eds000n} 
+    %{\centering \color{darkblue} Master in Computer Science\\ }\\
+  \begin{tabular}{ m{0.7em} m{8em} m{0.7em} m{8em} m{0.7em} m{8em} m{0.7em} m{8em} }
+    \includegraphics[width=1.2em]{email.png} & {\small{ticonae@acm.org}} &  \includegraphics[height=1.2em]{iphone.png} & {\small{+39 334 1959632}} & \includegraphics[width=1.2em]{github.png} & {\small{github.com/eds000n}}  & \includegraphics[width=1.2em]{linkedin.png} & {\small{linkedin.com/in/eticonazegarra}} \\
+  \end{tabular}
+} 
+\begin{resume}
+
+  
+\vspace*{-1.5em}
+  \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.8pt}}
+%\vspace{-2em}
+\vspace*{-0.9em}
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+  \begin{minipage}[t]{0.68\linewidth}
+  \section{\Large{\color{darkblue}Technical Skills}}
+    \begin{itemize}[leftmargin=-1em]
+      \item \textbf{Development experience} C/C++, Java, Python, Ruby, JS, Bash\\
+        Awk, Sed, Git, MongoDB, and MySQL
+      \item \textbf{Familiar with} Linux, Scrum, Matlab, HTML, CSS, Docker
+      \item \textbf{Frameworks} Django, Rails, Node.js, Express.js
+      %\item \textbf{C/C++}{\small~4 years of experience in academic projects and competitive\\ programming}
+      %\item \textbf{Java}{\small~2 years of professional experience}
+      %\item \textbf{Python, Ruby, Javascript, Bash}{\small~3 years of experience in\\ web frameworks and scripting as freelancer}
+      %\item \textbf{Linux}{\small}
+%\item \textbf{C\# and Swift}{\small~1 year of professional experience}
+    \end{itemize}
+\end{minipage}
+\hspace{1em}
+  \begin{minipage}[t]{0.3\linewidth}
+%{\sl Programming Languages:}  C/C++, C\#, Java, Bash, Ruby, Python, Javascript and Swift\\
+%{\sl Frameworks:} Django, Ruby on Rails, AngularJS and NodeJS\\
+%{\sl OSs, Databases and Others:} Linux/Unix OS, MySQL, PostgreSQL, \LaTeX and git 
+%{\sl Software:} \LaTeX \\ 
+%{\sl Laboratory:}  oscilloscope, logic analyzer, signal generator, solder, and multimeter \\
+%\vspace{-2mm}
+ 
+%\section{Idiomas}
+%Espanhol (nativo), Ingl\^es (Puntua\c{c}\~ao TOEFL ITP: 583/677), Portugu\^es, Italiano (b\'asico). 
+%https://www.ets.org/toefl_itp/research/performance-descriptors/
+%\vspace{-1.5em}
+%\columnbreak
+
+
+    \section{\Large{\color{darkblue}Interests}}
+    \begin{itemize}[leftmargin=-2.2em]
+      \item Mathematical Optimization
+      \item Data Structures and Algorithms %complexity
+      \item Blockchain and Finance%cryptocurrencies
+      \item Machine Learning and data mining
+    \end{itemize}
+  \end{minipage}
+\end{enumerate}
+
+%\section{Educa\c{c}\~ao}
+%\section{Publica\c{c}\~oes}
+
+\vspace*{-1.2em}
+  \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.8pt}}
+  %\noindent\makebox[\linewidth]{\rule{\paperwidth}{1pt}}
+\vspace*{-2.5em}
+\section{\Large{\color{darkblue} Experience}}
+\begin{itemize}[leftmargin=-1em]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item \textbf{Apple Developer Academy Trainee} - University Federico II, {\color{darkblue}Naples, Italy} \hfill Oct/2017 - Jun/2018
+\begin{minipage}{\linewidth}
+\vspace*{0.4em}
+\renewcommand\labelitemii{\tiny$\bullet$}
+\begin{itemize}[leftmargin=1em]
+\setlength\itemsep{-1.2em}
+%\item {\small Training initiative of Apple with the University of Naples Federico II. Full Stack developer.\\}
+\item {\small Full Stack developer.\\}
+\item {\small Developed iOS applications with Swift using Node.js and serverless approaches with Firebase.\\}
+\item {\small Worked on multiple projects using the CBL methodology.}
+%\item {\small Developed backend with Node.js using third party RESTful APIs.}
+\end{itemize} 
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%{\small Agile development}
+%Desenvolvimento de uma plataforma web para controle de instrumental cir\'urgicos para um hospital. Desenvolvimento de software para controlar hardware RFID e para procesamento de imagens para reconhecimento de c\'odigos datamatrix.
+
+%\item Desenvolvedor Web, Scylla Informatics, Campinas, Brasil (2016) \\
+%Desenvolvedor Web usando C\#. 
+\vspace*{0.2em}
+\item \textbf{Full Stack Developer at Scylla Informatics}, {\color{darkblue}Campinas, Brazil} \hfill Dec/2015 - Jul/2016\\
+\begin{minipage}{\linewidth}
+\vspace*{0.4em}
+\renewcommand\labelitemii{\tiny$\bullet$}
+\begin{itemize}[leftmargin=1em]
+\setlength\itemsep{-1.2em}
+\item{\small Developed web application for a company that makes genetic treatment of seeds; backend in .NET MVC in C\# and frontend using jQuery and bootstrap.\\}
+\item{\small Processed high volume data files and implemented proper database transactions handling.\\}
+%\item{\small Processed high volume data files and implemented proper database transactions handling, improving the quality of the generated reports.\\}
+\item{\small Improved the database model by applying normalization concepts, obtaining significant gains on all transactions.}
+%\item{\small The process reduced the time for makings the reports that supported decisions aiming to improve the productivity of the seeds.}
+\end{itemize} 
+\end{minipage}
+%{\small Developed the front-end interface for  developer of a web application in C\# that organized statistical data of the plantations of a forestry company. }
+%{\small Validated the data model}
+%{\small Developed the backend part related to the parsing and processing of big csv files. Handled transactions in a SQL database.}
+%{\small Developed the frontend interface for uploading the data from the experiments.}
+
+%\item Desenvolvedor e pesquisador, Radio Observatorio de Jicamarca, Lima, Peru. (2014) \\
+%Implementac\c{c}\~ao de um 
+%cluster de 16 processadores e 4 GPUs sob uma arquitetura InfiniBand, usando a distribui\c{c}\~ao Linux Rocks. Testes e benchmarks foram rodados para comprovar a velocidade do cluster.
+
+%\item Developer, Jicamarca Radio Observatory, Lima, Peru (2014)\\
+%Web developer.
+
+%\vspace*{0.2em}
+%\item \textbf{Internship at the Jicamarca Radio Observatory (JRO)}, {\color{darkblue}Lima, Peru} \hfill Jan - Apr/2014\\
+%\begin{minipage}{\linewidth}
+%\vspace*{0.4em}
+%\renewcommand\labelitemii{\tiny$\bullet$}
+%\begin{itemize}[leftmargin=1em]
+%\setlength\itemsep{-1.2em}
+%%\item{\small Set testbed and benchmarks for the new cluster intended to process high volume data generated by the JRO's radar. \\}
+%\item{\small Designed and tested high-volume processing benchmarks for the new cluster to be added to the JRO's radar.\\}
+%\item{\small Wrote monthly reports. The final results were published in the Geophysics Institute of Peru (IGP) Reports.\\}
+%%\item{\small Developed a web app in Django for populating a Madrigal database reducing the time spent by manual insertion.}
+%\item{\small Reduced the manual labor for data insertion in a Madrigal database by a web web application written in Django.}
+%\end{itemize} 
+%\end{minipage}
+% high sampling frequency radar. Cluster implementation over an InfiniBand architecture using the Linux Rocks distribution. Testing and benchmarks were done to test the cluster performance.}
+  %\item \textbf{Testbed and bechmark Infiniband. } {\small This project was developed as intern in the Jicamarca Radio Observatory. The goal was to setup and test a cluster for processing the data gathered by the radar at the observatory. Scripts for testing and plotting results were developed in Python, test applications in C. The results were published in the IGP (Instituto Geofisico del Per\'u) reports.}
+
+
+%\item Desenvolvedor multim\'edia, Experimedia, Lima, Peru. (2011) \\
+%Desenvolvimento de um software de Realidade Aumentada usando o binding do NyARToolkit
+%para java, fazendo processamento com openCV e rendering com jogl (binding de openGL
+%para java).
+
+
+% ================= not in anymore =======
+%\item \textbf{Software Developer}, Experimedia, {\color{darkblue}Lima, Peru} \hfill Apr/2009 - Apr/2010\\
+%{\small Augmented Reality developer in Java}
+
+%with some 
+%image processing with OpenCV.
+
+%\item \textbf{Technical Software Support} on "Lima'09: Magic and Technology", Lima, Peru \hfill 2009\\
+%{\small Technical software support for the projects presented in the event.}
+
+% ============== not in anymore ========
+%\item \textbf{Software Tester}, Compulinux, {\color{darkblue}Lima, Peru} \hfill Jul/2008 - Mar/2009\\
+%{\small Web-based system tester and Java Developer. Developer of scripts for system functionality and stress tests.}
+
+\end{itemize}
+
+
+
+
+%\section{Inicia\c{c}\~ao Cient\'ica}
+
+%\vspace{-1.5em}
+%\section{Undergraduate Research Experience}
+%Implementação do AES em FPGA para segurança de aplicações sem fio, IIFIEE (Instituto de Investigaci\'on de la Facultad de Ingenier\'ia El\'ectrica y Electr\'onica), Lima, Peru. (2010) \\ 
+%Implementac\c{c}\~ao do Advanced Encryption Standard (AES) em um FPGA Xilinx Spartan
+%3E para a encrita\c{c}\~ao dos pacotes da interface sem fio, com o objetivo de desenvolver um hardware dedicado para a encrita\c{c}\~ao dos pacotes que seja seguro e eficiente no uso de energia. Orientado pelo Dr. Juan Mauricio Villanueva.
+%e foi ganhador da feria tecnológica do INTERCON 2010.
+%Implementation of the Advanced Encryption Standard (AES) algorithm in FPGA for security of wireless applications, IIFIEE (Instituto de Investigaci\'on de la Facultad de Ingenier\'ia El\'ectrica y Electr\'onica), Lima, Peru. (2010) \\ 
+%Implementation of the AES in a Xilinx Spartan 3E FPGA for securing 
+%data packets in the wireless interface, with the goal to develop dedicated hardware that guarantees 
+%security and energy efficiency. Advised by Dr. Juan Mauricio Villanueva.
+
+%\section{Est\^agio Docente}
+%Disciplina: Projeto e An\'alise de Algoritmos III (1s 2017), Instituto de Computa\c{c}\~ao, UNICAMP.
+%\section{Teaching Experience}
+%Teaching Assistant at UNICAMP (2017) \\Course: Design and Analysis of Algorithms III (introductory undergraduate course on NP-completeness and treatment of NP-hard problems, including exact algorithms, approximation algorithms and heuristics)
+
+\vspace*{-1.2em}
+  \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.8pt}}
+\vspace*{-2.5em}
+\section{\Large{\color{darkblue}Most relevant projects}}
+\begin{itemize}[leftmargin=-1em]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \item \textbf{Becas.LA} - 2018. {\small Cofounder and Full stack developer.\\}
+\vspace*{0.2em}
+\begin{minipage}{\linewidth}
+\vspace*{0.2em}
+\renewcommand\labelitemii{\tiny$\bullet$}
+\begin{itemize}[leftmargin=1em]
+\setlength\itemsep{-1.2em}
+  \item{\small Designed the system architecture as microservices components.\\}
+  \item{\small Developed the backend using Django and the frontend with JQuery and Bootstrap. \\}
+  %\item{\small Developed connection to third party services using RESTful APIs.\\}
+  \item{\small Implemented crawler to keep updated the database, reducing by more than 50\% the time required to lls.}
+  %\item{\small Code versioning with Git and deployment with Heroku and Docker.}
+\end{itemize} 
+\vspace*{0.2em}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \item \textbf{Cryptoshi} - 2018. {\small Lead developer. iOS app with analysis tools for investment in cryptocurrencies. App in testing stage.\\}
+\vspace*{0.2em}
+\begin{minipage}{\linewidth}
+\vspace*{0.2em}
+\renewcommand\labelitemii{\tiny$\bullet$}
+\begin{itemize}[leftmargin=1em]
+\setlength\itemsep{-1.2em}
+  \item{\small Designed the data model and the backend architecture as microservices components.\\}
+  \item{\small Developed the backend using MongoDB, Node.js and Express.js. Implemented the RESTful API so the iOS app in Swift could connect to the backend.\\}
+  %\item{\small Developed connection to third party services using RESTful APIs.\\}
+  \item{\small Implemented connection to third party services using RESTful APIs and developed cache policies reducing external calls.}
+  %\item{\small Code versioning with Git and deployment with Heroku and Docker.}
+\end{itemize} 
+\vspace*{0.2em}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \item \textbf{Routing Argorithm for Wireless Sensor Networks --- Master's Thesis} - 2017. {\small Project aimed to improve the network lifetime of a Wireless Sensor Network by using a Genetic Algorithm and heuristics for certain kind of scenarios.\\}
+\begin{minipage}{\linewidth}
+\vspace*{0.2em}
+\renewcommand\labelitemii{\tiny$\bullet$}
+\begin{itemize}[leftmargin=1em]
+\setlength\itemsep{-1.2em}
+  \item{\small Worked with multithreading programming in Java and C++ using the STL; brkgaAPI, an API for random-key genetic algorithms; and LEMON, a library for combinatorial optimization.\\}
+  \item{\small Developed visualization tools in D3.js for easing the analysis of the results. \\}%and test scripts in bash.\\}
+  \item{\small Wrote and published two academic papers. The results significalty increased the lifetime of the network.}
+\end{itemize} 
+\vspace*{0.2em}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \item \textbf{System for monitoring medical equipment based on RFID} - 2017. {\small Lead developer. Project to monitor medical equipment in the sterilization process with RFID tags and Data Matrix codes printed on the equipments.\\}
+\vspace*{0.2em}
+\begin{minipage}{\linewidth}
+\vspace*{0.2em}
+\renewcommand\labelitemii{\tiny$\bullet$}
+%\renewcommand\labelitemii{\tiny$\textperiodcentered$}
+%\renewcommand\labelitemi{\tiny$\textbullet$}
+\begin{itemize}[leftmargin=1em]
+\setlength\itemsep{-1.2em}
+ \item{\small Designed the system architecture and the data model.\\}
+ \item{\small Developed backend in Ruby on Rails using an Oracle DB and the frontend in jQuery and Bootstrap. The integration software for the RFID and Data Matrix readers were implemented in C.\\}
+ \item{\small The system increases the detection of errors in the procedure and significantly reduces equipment loses.}
+\end{itemize} 
+\end{minipage}
+%The project is intended to be used by a public hospital. It was funded by the National Council for Scientifical and Technological Development of Brazil (CNPq) and was presented as a paper in a national conference.}
+
+%\item \textbf{KPDevs} - 2016. {\small Peruvian Startup advocated to develop IoT solutions for the industry. A beta version of a plataform for gathering sensor data was developed in Django, although the project is currently stalled.}
+%  \item \textbf{AES implementation over FPGA} - 2010. {\small The Advanced Encryption Standard was implemented in FPGA with the goal of securing wireless applications as an undergraduate research experience in the faculty.}
+\end{itemize}
+
+%\vspace*{-1.5em}
+%\section{Publications}
+%\begin{itemize}[leftmargin=-1em]
+%\item \underline{Edson Ticona Zegarra}, Rafael C. S. Schouery, Fl\'avio K. Miyazawa and Leandrio A. Villas. Improved Continuous Enhacement Routing Solution for Energy-Aware Data Aggregation in Wireless Sensor Networks. International Journal of Distributed Sensor Networks 2018. %\footnote{Accepted and to be published}
+%\item \underline{Edson Ticona Zegarra}, Rafael C. S. Schouery, Flávio K. Miyazawa and Leandro A. Villas. A Continuous Enhancement Routing Solution aware of data aggregation for Wireless Sensor Networks. Proceedings of the IEEE 15th International Symposium on Network Computing and Applications (NCA 2016).
+%
+%\item Rafael Marinho Farias, \underline{Edson Ticona Zegarra}, Daniel Hel\'u, Ricardo Leite Barroso, Edna Maria S. Beck, Eliana Rocha, Luiz Roberto Lopes, Francisco Ubaldo Vieira Jr and Eduardo Tavares Costa. 
+%Development of a system for rastreability of cirurgical equipment in a sterilization and materials center of a public hospital. Annals of the XXV Brazilian Conference on Biomedical Engineering (CBEB 2016).
+%%Desenvolvimento de sistema para rastreabilidade e controle de instrumentais cir\'urgicos em central de materiais e esteriliza\c{c}\~ao de um hospital p\'ublico. Anais do XXV Congresso Brasileiro de Engenharia Biom\'edica (CBEB 2016).
+%%\item {With some luck, the journal sensor publication}
+%\end{itemize}
+
+%\section{Projects}
+%Raspberry Pi Robot \newline - {\sl Individual} \\
+%\begin{itemize}
+%  \vspace{-2mm}
+% \item Using a Raspberry Pi to construct a remote control robot.
+% \item Camera module connection for live streaming robot vision back to monitor.
+% \item Developed Python code to control robot motions and camera module.
+%\end{itemize}
+%3pi Robot \newline - {\sl Group Project}\\
+%\begin{itemize}
+%  \vspace{-2mm}
+% \item Developed C code to control robot motion and ability to autonomously traverse a maze. 
+% \end{itemize}
+
+%\section{Activities} 
+% Institute of Electrical and Electronic Engineers | Member \\
+% University of Iowa Powerlifting Club Treasurer (2013) | Member (Present) 
+
+\vspace*{-1em}
+  \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.8pt}}
+
+\vspace{-1.5em}
+\section{\Large{\color{darkblue} Education}}
+%\textit{Master Class, Apple Developer Academy}\\
+%\textbf{University Federico II (UNINA)}, Naples, Italy \hfill 2018\\%\footnote{The program finishes in June 2018}
+\begin{itemize}[leftmargin=-1em]
+\item \textbf{M.Sc. Computer Science} --- UNICAMP, {\color{darkblue}Campinas, Brazil} \hfill Sep/2014 - Aug/2017\\%\footnote{Theses dissertation scheduled for August  2017}
+%{\small Institute of Computing --- University of Campinas\\}
+{\footnotesize Teacher Assistant: Design and Analysis of Algorithms 3.\\
+%Courses: Algorithms and Complexity, Computational Geometry, Parameterized Algorithms, Image Processing, Multimedia Networks.}
+Courses: Algorithms and Complexity, Computational Geometry, Image Processing, Multimedia Networks.}
+\item \textbf{B.Sc. Telecommunications Engineering} --- UNI, {\color{darkblue}Lima, Peru} \hfill Aug/2006 - Dec/2013\\
+%{\small Electrical and Electronical Engineering Faculty --- National University of Engineering\\}
+{\footnotesize Member of the Student Representation at the University Council.\\
+Undergraduate research experience: AES implementation in a FPGA for wireless applications.}
+\end{itemize}
+%\textbf{Universidad Nacional de Ingenieria (UNI)}, Lima, Peru \hfill 2013\\
+
+%{\sl Bachaler} - Electrical Engineering (3.41/4.0)\hfill Expected: May 2017\\
+%{\sl Minor} - Computer Science \\
+%University of Iowa,  Iowa City, IA
+  %\vspace{-2mm}
+  
+%\section{Relevant Coursework}
+%  {\sl Electrical Engineering}: Circuit Lab 1 and 2, Circuit Design, Digital Design\\
+%  {\sl Computer Science}: Data Structures, Algorithms, C++, 
+
+% \section{Experience}
+% University of Iowa Carver College of Medicine | Iowa City, IA \newline
+%  - {\sl Research Assistant} \hfill February 2014 – March 2015\\
+%  \vspace{-2mm}
+%  \begin{itemize}
+%  \item Designed a database using Microsoft Access to store 100+ interview responses.
+%  \item Trained new employees in laboratory processes and proper documentation.
+%  \item Troubleshoot laboratory processes to identify and address inefficiencies.
+%  \end{itemize}
+%    \vspace{-2mm}
+
+% NanoMedTrix, LLC | Coralville, IA \newline - {\sl Image Processing Engineer} \hfill October 2014 – January 2015\\
+%   \vspace{-2mm}
+%   \begin{itemize}
+%   \item Supported research team by compiling MRI data. 
+%   \end{itemize}
+%     \vspace{-2mm}
+
+%  City of Northfield | Northfield, IA \newline - {\sl Lifeguard}\hfill  June 2013 – August 2013\\
+%   \vspace{-2mm}
+%  \begin{itemize}
+%  \item Maintain safe and secure swimming area by enforcing rules, policies, and procedures.
+%  \item Take care of pool.
+%  \end{itemize}
+%   \vspace{-2mm}
+ 
+%  Kmart | Northfield, IA \newline - {\sl Electronics Associate}\hfill May 2011 – August 2013\\
+%  \vspace{-2mm}
+%  \begin{itemize}
+%  \item Help customers purchase electronics.
+%  \item Stock and organize items.
+%  \end{itemize}
+%   \vspace{-2mm}
+ 
+%\section{Pr\^emios} 
+%Projeto ganhador da feira tenol\'ogica do INTERCON 2010. Perú.
+ %Awarded Dean’s List for Fall 2013, Fall 2014
+\vspace*{-1.5em}
+  \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.8pt}}
+\vspace*{-0.9em}
+%\begin{multicols}{2}
+
+%\begin{tabular}{p{0.3\textwidth} p{0.7\textwidth}}
+%\multicolumn{2}{ p{\textwidth}} {
+
+%\begin{vwcol}[widths={0.6,0.4},
+% sep=.8cm, justify=flush,rule=0pt,indent=0em] 
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+  \begin{minipage}[t]{0.68\linewidth}
+    \section{\Large{\color{darkblue}Awards and Honors}}
+    \begin{itemize}[leftmargin=-1.5em]
+      \item 
+      \item $3^{rd}$ place on the Apple Developer Academy's selection process. 2017
+      \item CAPES grant for post-graduate students. \hspace{9.6em} 2015
+      \item Honorable Mention in the ACM-ICPC South America Regionals. 2010
+      %\item Winner project of the technological festival or INTERCON, Peru. 2010
+      %\item Regional winner on the National Mathematics Olympics, Peru \hfill 2005
+    \end{itemize}
+  \end{minipage}
+  \hspace{1em}
+  \begin{minipage}[t]{0.3\linewidth}
+    \section{\Large{\color{darkblue}Languages}}
+    \begin{itemize}[leftmargin=-2.2em]
+      \item \textbf{Spanish} Native Speaker
+      \item \textbf{English} TOEFL ITP score: 583/677
+      \item \textbf{Portuguese} Professional Proficiency
+      \item \textbf{Italian} Professional Proficiency
+    \end{itemize}   
+  \end{minipage}
+\end{enumerate}
+%\end{multicols}
+%\end{vwcol}
+
+%}
+%\end{tabular}
+
+%\end{multicols}
+\end{resume}
+\end{document}
+

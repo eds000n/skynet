@@ -35,6 +35,21 @@
   height: 28px;
   pointer-events: none;
 }
+
+/* styles for ROCs */
+.chart-container {
+  width: 300px;
+  height: 300px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.container-roc {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
     </style>
   </head>
 
@@ -48,7 +63,7 @@
       {% csrf_token %}
       <div class="form-group">
         <label for="exampleFormControlFile1">Input Dataset</label>
-        <input type="file" class="form-control-file" id="inputDataset" multiple>
+        <input type="file" class="form-control-file" name="file" id="inputDataset" multiple>
       </div>
       <!--button type="submit" class="btn btn-primary">Run!</button-->
       <input type="submit" class="btn"  value="Run!">
@@ -67,9 +82,12 @@
           <th>Algorithm</th>
           <th>Coverage (%)</th>
           <th>Computation Time (s)</th>
-          <th>Accuracy (%)</th>
           <th>Complexity</th>
           <th>Memory Usage (KB)</th>
+          <th>Accuracy (%)</th>
+          <th>Precision</th>
+          <th>Recall</th>
+          <th>F1 score</th>
         </tr>
       </thead>
       <tbody>
@@ -77,29 +95,40 @@
           <td>Direct Match</td>
           <td id="dm-coverage"></td>
           <td id="dm-time"></td>
-          <td id="dm-accuracy"></td>
           <td>O(nm)</td>
           <td id="dm-memory"></td>
+          <td id="dm-accuracy"></td>
+          <td id="dm-precision"></td>
+          <td id="dm-recall"></td>
+          <td id="dm-f1score"></td>
         </tr>
         <tr>
           <td>Levenshtein distance</td>
           <td id="l-coverage"></td>
           <td id="l-time"></td>
-          <td id="l-accuracy"></td>
           <td>O(n^2)</td>
           <td id="l-memory"></td>
+          <td id="l-accuracy"></td>
+          <td id="l-precision"></td>
+          <td id="l-recall"></td>
+          <td id="l-f1score"></td>
         </tr>
         <tr>
           <td>ML</td>
           <td id='ml-coverage'></td>
           <td id='ml-time'></td>
-          <td id='ml-accuracy'></td>
           <td></td>
           <td id='ml-memory'></td>
+          <td id='ml-accuracy'></td>
+          <td id='ml-precision'></td>
+          <td id="ml-recall"></td>
+          <td id="ml-f1score"></td>
         </tr>
       </tbody>
     </table>
-    <canvas id="canvas"></canvas>
+    <canvas id="canvas-coverage"></canvas>
+    <div class="container-roc">
+        </div>
     </div>
     <!-- JS libraries -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -154,14 +183,26 @@ $(document).ready( function () {
               $("#l-coverage").html(o.coverage);
               $("#l-time").html(o.time);
               $("#l-memory").html(o.memory);
+              $("#l-accuracy").html(o.accuracy);
+              $("#l-precision").html(o.precision);
+              $("#l-recall").html(o.precision);
+              $("#l-f1score").html(o.f1score);
             }else if (o.algorithm=="directmatch"){
               $("#dm-coverage").html(o.coverage);
               $("#dm-time").html(o.time);
               $("#dm-memory").html(o.memory);
+              $("#dm-accuracy").html(o.accuracy);
+              $("#dm-precision").html(o.precision);
+              $("#dm-recall").html(o.precision);
+              $("#dm-f1score").html(o.f1score);
             }else if (o.algorithm=="ml"){
               $("#ml-coverage").html(o.coverage);
               $("#ml-time").html(o.time);
               $("#ml-memory").html(o.memory);
+              $("#ml-accuracy").html(o.accuracy);
+              $("#ml-precision").html(o.precision);
+              $("#ml-recall").html(o.precision);
+              $("#ml-f1score").html(o.f1score);
             }
           }
         },
@@ -201,8 +242,8 @@ $(document).ready( function () {
       backgroundColor: color(window.chartColors.red).alpha(0.2).rgbString(),
       //backgroundColor: 'rgba(0,0,1,0.2)',
       data: [{
-        x: 30.2,
-        y: 34.3,
+        x: 0.0,
+        y: 0.0,
       }]
     }, {
       label: 'Direct Match',
@@ -211,21 +252,21 @@ $(document).ready( function () {
       backgroundColor: color(window.chartColors.blue).alpha(0.2).rgbString(),
       //backgroundColor: 'rgba(0,1,0,0.2)',
       data: [{
-        x: 45.2,
-        y: 89.3,
+        x: 0.0,
+        y: 0.0,
       }]
     }, {
       label: 'Machine Learning',
       borderColor: window.chartColors.purple,
       backgroundColor: color(window.chartColors.purple).alpha(0.2).rgbString(),
       data: [{
-        x: 0,
-        y: 0,
+        x: 0.0,
+        y: 0.0,
       }]
     }]
   };
 
-  var ctx = document.getElementById('canvas').getContext('2d');
+  var ctx = document.getElementById('canvas-coverage').getContext('2d');
   window.myScatter = Chart.Scatter(ctx, {
     data: scatterChartData,
     options: {
@@ -252,6 +293,96 @@ $(document).ready( function () {
     }
 
   });
+
+  ROCGraph();
+function ROCGraph(){
+  var container = document.querySelector('.container-roc');
+  var data = [ {
+    x: 0,
+    y: 0.2
+  }, {
+    x: 0.2,
+    y: 0.3
+  }, {
+    x: 0.4,
+    y: 0.5
+  }, {
+    x: 0.6,
+    y: 0.55
+  }, {
+    x: 0.73,
+    y: 0.62
+  }, {
+    x: 0.82,
+    y: 0.79
+  }, {
+    x: 0.9,
+    y: 0.83
+  }, {
+    x: 1.0,
+    y: 1.0
+  } ];
+
+  var steppedLineSettings = [/*{
+    steppedLine: false,
+    label: 'No Step Interpolation',
+    color: window.chartColors.red
+  },*/ {
+    //steppedLine: true,
+    steppedLine: 'after',
+    label: 'Direct Match',
+    color: window.chartColors.blue
+  }, {
+    //steppedLine: 'before',
+    steppedLine: 'after',
+    label: 'Levenshtein Distance',
+    color: window.chartColors.red
+  }, {
+    steppedLine: 'after',
+    label: 'ML',
+    color: window.chartColors.purple
+  }];
+
+  steppedLineSettings.forEach(function(details) {
+    console.log(details);
+    var div = document.createElement('div');
+    div.classList.add('chart-container');
+
+    var canvas = document.createElement('canvas');
+    div.appendChild(canvas);
+    container.appendChild(div);
+
+    var ctx = canvas.getContext('2d');
+    var config = createConfig(details, data);
+    new Chart(ctx, config);
+  });
+}
+
+function createConfig(details, data){
+  return {
+    type: 'line',
+    data: {
+      labels: ['0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9', '1.0'],
+      datasets: [{
+        //label: 'steppedLine: ' + details.steppedLine,
+        label: '',
+        steppedLine: details.steppedLine,
+        data: data,
+        borderColor: details.color,
+        fill: false,
+      }]
+    },
+    options: {
+      responsive: true,
+      title: {
+        display: true,
+        text: details.label,
+      }
+    }
+  }
+
+
+}
 
 function updateChart(obj){
   scatterChartData.datasets.forEach(function(dataset) {
